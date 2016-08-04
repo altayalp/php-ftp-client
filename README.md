@@ -87,7 +87,7 @@ Array
 This method takes two more optional parameters. $recursive also fetch subdirectories. $ignore parameter determine extension of the files which you dont want to see in list.
 
 ```php
-$list = $file->listItem('public_html' false, array('php','html'));
+$list = $file->ls('public_html' false, array('php','html'));
 ```
 
 Will output:
