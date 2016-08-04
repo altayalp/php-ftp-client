@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         bootstrap="./tests/bootstrap.php">
+    
+    <testsuites>
+        <testsuite name="altayalp/FtpClient">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    
+    <php>
+        <env name="FTP_HOST" value="host" />
+        <env name="FTP_USER" value="user" />
+        <env name="FTP_PASS" value="password" />
+    </php>
+    
+</phpunit>
