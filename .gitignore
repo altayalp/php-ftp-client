@@ -1,0 +1,9 @@
+# Ide
+nbproject
+# Composer
+vendor
+composer.lock
+# Test
+phpunit.xml
+# Php files
+example.php
