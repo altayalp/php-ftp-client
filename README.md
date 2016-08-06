@@ -1,8 +1,8 @@
 # PHP FTP Client Library
 
-[![Latest Stable Version](https://poser.pugx.org/altayalp/ftp-client/version)](https://packagist.org/packages/altayalp/test)
-[![Latest Unstable Version](https://poser.pugx.org/altayalp/ftp-client/v/unstable)](//packagist.org/packages/altayalp/test)
-[![License](https://poser.pugx.org/altayalp/ftp-client/license)](https://packagist.org/packages/altayalp/test)
+[![Latest Stable Version](https://poser.pugx.org/altayalp/ftp-client/version)](https://packagist.org/packages/altayalp/ftp-client)
+[![Latest Unstable Version](https://poser.pugx.org/altayalp/ftp-client/v/unstable)](//packagist.org/packages/altayalp/ftp-client)
+[![License](https://poser.pugx.org/altayalp/ftp-client/license)](https://packagist.org/packages/altayalp/ftp-client)
 
 Php 5.4+ object oriented and unit tested library for FTP and SFTP (ssh ftp) process.
 
@@ -84,7 +84,7 @@ Array
 )
 ```
 
-This method takes two more optional parameters. $recursive also fetch subdirectories. $ignore parameter determine extension of the files which you dont want to see in list.
+This method takes two more optional parameters. $recursive also fetch subdirectories. $ignore parameter determine extension of the files which you don't want to see in list.
 
 ```php
 $list = $file->ls('public_html' false, array('php','html'));
@@ -126,7 +126,7 @@ Array
 )
 ```
 
-This method takes two more optional parameters. $recursive also fetch subdirectories. $ignore parameter determine name of the directories which you dont want to see in list.
+This method takes two more optional parameters. $recursive also fetch subdirectories. $ignore parameter determine name of the directories which you don't want to see in list.
 
 ```php
 $list = $dir->ls('public_html' false, array('packages','vendor'));
