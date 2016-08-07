@@ -3,7 +3,7 @@
     "type": "library",
     "description": "FTP and SFTP client for Php",
     "keywords": ["ftp","php ftp","sftp","ssh ftp","ssh","ftp client"],
-    "homepage": "https://github.com/altayalp/php-ftpclient",
+    "homepage": "https://github.com/altayalp/php-ftp-client",
     "license": "MIT",
     "authors": [
         {
