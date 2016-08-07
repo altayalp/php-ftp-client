@@ -23,7 +23,7 @@ class SftpServer implements ServerInterface
      * Connect session
      * 
      * @access private
-     * @var string
+     * @var resource
      */
     private $session;
     /**
