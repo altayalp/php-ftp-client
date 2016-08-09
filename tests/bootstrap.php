@@ -1,9 +1,9 @@
 <?php
 
-$vendorDir = '../vendor';
+$vendorDir = 'vendor';
 
-if (! @include($vendorDir . '/autoload.php')) {
+if (! file_exists($vendorDir . '/autoload.php')) {
     die("You must set up the project with conposer");
 }
 
-$loader = require $vendorDir . '/autoload.php';
+require($vendorDir . '/autoload.php');
