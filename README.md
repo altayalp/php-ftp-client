@@ -24,13 +24,13 @@ This command will install the library on current dir.
 
 ```php
 // connect to ftp server
-use altayalp\FtpClient\FtpServer;
+use altayalp\FtpClient\Servers\FtpServer;
 
 $server = new FtpServer('ftp.example.com');
 $server->login('user', 'password');
 
 // or connect to ssh server
-use altayalp\FtpClient\SftpServer;
+use altayalp\FtpClient\Servers\SftpServer;
 
 $server = new SftpServer('ssh.example.com');
 $server->login('user', 'password');
@@ -40,13 +40,13 @@ You can call SftpServer class by port or FtpServer class by the port and timeout
 
 ```php
 // connect to ftp server
-use altayalp\FtpClient\FtpServer;
+use altayalp\FtpClient\Servers\FtpServer;
 
 $server = new FtpServer('ftp.example.com', 21, 90);
 $server->login('user', 'password');
 
 // or connect to ssh server
-use altayalp\FtpClient\SftpServer;
+use altayalp\FtpClient\Servers\SftpServer;
 
 $server = new SftpServer('ssh.example.com', 22);
 $server->login('user', 'password');
