@@ -50,7 +50,7 @@ abstract class AbstractFtpException extends \Exception implements ExceptionInter
      */
     protected $line;
     
-    public function __construct($message = null, $code = 0, Exception $previous = null)
+    public function __construct($message = null, $code = 0, \Exception $previous = null)
     {
         if ($message === null) {
             $message = $this->message;
