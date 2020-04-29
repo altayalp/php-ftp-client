@@ -10,6 +10,7 @@ namespace altayalp\FtpClient\Servers;
 use altayalp\FtpClient\Interfaces\ServerInterface;
 use altayalp\FtpClient\Exceptions\ExtensionMissingException;
 use altayalp\FtpClient\Exceptions\ConnectionFailedException;
+use altayalp\FtpClient\Exceptions\AuthenticationFailedException;
 
 /**
  * Connect and log in to ssh server
