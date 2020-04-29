@@ -41,28 +41,49 @@ class SftpFile extends AbstractSftp implements FileInterface
     {
         return $this->listItem('file', $dir, $recursive, $ignore);
     }
-    
-    /**
-     * {@inheritDoc}
-     */
+  
+  /**
+   * @inheritDoc
+   * @throws FileException
+   */
     public function download($remote, $local)
     {
         $parseFile = $this->parseLastDirectory($remote);
-        if (! ssh2_scp_recv($this->session, $parseFile, $local)) {
-            throw new FileException('File can not downloaded');
+        $stream = @fopen($this->getWrapper($parseFile), 'r');
+        if (! $stream) {
+          throw new FileException("Could not open file: $parseFile");
         }
+        
+        $contents = fread($stream, filesize($this->getWrapper($parseFile)));
+        file_put_contents($local, $contents);
+        
+        @fclose($stream);
+        
         return true;
     }
     
     /**
-     * {@inheritDoc}
+     * @inheritDoc
+     * @throws FileException
      */
     public function upload($local, $remote)
     {
         $parseFile = $this->parseLastDirectory($remote);
-        if (! ssh2_scp_send($this->session, $local, $parseFile)) {
-            throw new FileException('File can not uploaded');
+        $stream = @fopen($this->getWrapper($parseFile), 'w');
+        
+        if (! $stream) {
+          throw new FileException("Could not open file: $parseFile");
         }
+        $data_to_send = @file_get_contents($local);
+        if ($data_to_send === false) {
+          throw new FileException("Could not open local file: $local.");
+        }
+        
+        if (fwrite($stream, $data_to_send) === false)
+          throw new FileException("Could not send data from file: $local.");
+        
+        @fclose($stream);
+        
         return true;
     }
     
