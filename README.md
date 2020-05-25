@@ -54,7 +54,7 @@ $server->login('user', 'password');
 
 You can use same methods for FTP and SFTP after login server. The factory classes will return file or directory class instance.
 
-If you have a problem login to FTP server, turnPassive() method may useful after login method. It's not exist for SFTP.
+If you have a problem login to FTP server, enablePassive() method may useful after login method. It's not exist for SFTP.
 
 ```php
 $server->turnPassive();
