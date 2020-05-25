@@ -20,7 +20,7 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase {
     {
         $server = new FtpServer( getenv('FTP_HOST') );
         $server->login(getenv('FTP_USER'), getenv('FTP_PASS'));
-        $server->turnPassive();
+        $server->enablePassive();
         self::$session = $server;
     }
     
