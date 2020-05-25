@@ -106,7 +106,7 @@ class FtpServer implements ServerInterface
      * 
      * @access public
      */
-    public function turnPassive()
+    public function enablePassive()
     {
         ftp_pasv($this->session, true);
     }
