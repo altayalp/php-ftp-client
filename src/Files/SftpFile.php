@@ -53,8 +53,11 @@ class SftpFile extends AbstractSftp implements FileInterface
         if (! $stream) {
           throw new FileException("Could not open file: $parseFile");
         }
-        
-        $contents = fread($stream, filesize($this->getWrapper($parseFile)));
+  
+        $contents = '';
+        while (!feof($stream)) {
+          $contents .= fread($stream, filesize($this->getWrapper("/$parseFile")));
+        }
         file_put_contents($local, $contents);
         
         @fclose($stream);
